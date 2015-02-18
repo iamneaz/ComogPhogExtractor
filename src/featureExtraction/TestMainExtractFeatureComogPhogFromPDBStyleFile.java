@@ -26,7 +26,7 @@ public class TestMainExtractFeatureComogPhogFromPDBStyleFile {
 	
 	public static void main(String[] args) {
 	
-		File fin=new File("input\\d1dlwa_.ent");
+		File fin=new File("input\\d3rmkd_.txt");
 		ComogPhogFeatureExtractor extractor=new ComogPhogFeatureExtractor();
 		String comogPhog=extractor.runFeatureExtraction(fin);
 

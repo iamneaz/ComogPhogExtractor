@@ -112,13 +112,15 @@ public  PHOG(){
     }
     int[] arrayOfInt = { 0 };
     int n;
-    for (int m = 1; m < i - 1; m++) {
-      for (n = 1; n < j - 1; n++) {
-        if (localBufferedImage.getRaster().getPixel(m, n, arrayOfInt)[0] < 50) {
-          trackWeakOnes(m, n, localBufferedImage);
-        }
-      }
-    }
+    
+//    for (int m = 1; m < i - 1; m++) {
+//      for (n = 1; n < j - 1; n++) {
+//        if (localBufferedImage.getRaster().getPixel(m, n, arrayOfInt)[0] < 50) {
+//          trackWeakOnes(m, n, localBufferedImage);
+//        }
+//      }
+//    }
+    
     for (int m = 2; m < i - 2; m++) {
       for (n = 2; n < j - 2; n++) {
         if (localBufferedImage.getRaster().getPixel(m, n, arrayOfInt)[0] > 50) {

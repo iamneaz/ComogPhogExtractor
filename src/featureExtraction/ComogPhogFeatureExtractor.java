@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
  */
 public class ComogPhogFeatureExtractor {
 
-    public String camatDirName="D:\\camat";
+//    public String camatDirName="D:\\camat";
     static Logger logger = Logger.getLogger(ComogPhogFeatureExtractor.class);
 	
     int maxCaCount = 2000;
@@ -136,28 +136,30 @@ public class ComogPhogFeatureExtractor {
             return "";
         }
     }
-
-    public void printCalphamatImage(double [][]calphadistmat,int numOfCAatom){
-    
-        try {
-    
-            File camatDir=new File(camatDirName);
-          BufferedImage im = new BufferedImage(numOfCAatom,numOfCAatom,BufferedImage.TYPE_BYTE_GRAY);
-         WritableRaster raster = im.getRaster();
-       // Put the pixels on the raster, using values between 0 and 255.
-       for(int h=0;h<numOfCAatom;h++)
-         for(int w=0;w<numOfCAatom;w++)
-           {
-           raster.setSample(w,h,0,calphadistmat[h][w]); 
-           }
-       // Store the image using the PNG format.
-String fileName=System.currentTimeMillis()+".png";
-       ImageIO.write(im,"PNG",new File(camatDir,fileName));
-        } catch (Exception e) {
-        }
-       
-    
-    }
+//
+//    public void printCalphamatImage(double [][]calphadistmat,int numOfCAatom){
+//    
+//        try {
+//    
+//            File camatDir=new File(camatDirName);
+//          BufferedImage im = new BufferedImage(numOfCAatom,numOfCAatom,BufferedImage.TYPE_BYTE_GRAY);
+//         WritableRaster raster = im.getRaster();
+//       // Put the pixels on the raster, using values between 0 and 255.
+//       for(int h=0;h<numOfCAatom;h++)
+//         for(int w=0;w<numOfCAatom;w++)
+//           {
+//           raster.setSample(w,h,0,calphadistmat[h][w]); 
+//           }
+//       // Store the image using the PNG format.
+//String fileName=System.currentTimeMillis()+".png";
+//       ImageIO.write(im,"PNG",new File(camatDir,fileName));
+//        } catch (Exception e) {
+//        }
+//       
+//    
+//    }
+//   
+//    
     public String runFeatureExtraction(double calphaImage[][], int numOfCAatom) {
         int newdimx = numOfCAatom, newdimy = numOfCAatom;
         double[][] resizedImage = calphaImage;
@@ -216,6 +218,10 @@ String fileName=System.currentTimeMillis()+".png";
          }
 }
     
+//        SavaeBufferedImageToDiskFile.save(im, null, null);
+        
+        
+        
         double[] p=null;
         try{
                  PHOG phog=new PHOG(3);
